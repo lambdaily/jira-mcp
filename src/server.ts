@@ -8,7 +8,7 @@ import { JiraClient, type JiraConfig } from "./jira.js";
 import { prepareIssueBranch } from "./worktree.js";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-loadDotenv({ path: process.env.JIRA_MCP_ENV_FILE ?? path.join(projectRoot, ".env") });
+loadDotenv({ path: process.env.JIRA_MCP_ENV_FILE ?? path.join(projectRoot, ".env"), quiet: true });
 
 function required(name: string): string {
   const value = process.env[name]?.trim();
